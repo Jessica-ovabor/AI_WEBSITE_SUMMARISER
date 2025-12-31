@@ -1,7 +1,7 @@
 [project]
 name = "ai-website-summariser"
 version = "0.1.0"
-description = "Add your description here"
+description = "The tool intelligently waits for page elements to load before retrieving content, ensuring reliable operation on modern web pages. Summaries are powered by a configurable AI model from OpenRouter, allowing flexible use of free or paid endpoints."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
