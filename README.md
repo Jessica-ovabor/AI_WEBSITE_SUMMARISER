@@ -4,6 +4,16 @@
 
 This project uses **Selenium** to scrape the content of any website. The scraper is dynamic, allowing it to handle different types of pages. The scraped content is then summarized using a **large language model (LLM)** from **OpenRouterAI**.
 
+This project allows users to:
+
+** Automate the process of reading long web pages.
+
+** Quickly generate summaries of articles, blogs, or other web content.
+
+** Integrate with different websites dynamically using Selenium.
+
+The scraper intelligently waits for page elements to load before retrieving content, ensuring reliable operation on modern web pages. Summaries are powered by a configurable AI model from OpenRouter, allowing flexible use of free or paid endpoints.
+
 ---
 
 ## Setup and Installation

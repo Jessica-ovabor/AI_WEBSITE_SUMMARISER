@@ -12,13 +12,13 @@ def web_scraper(url):
     search = driver.find_element(By.ID, "InlineSearch")
     search.send_keys("Australia", Keys.RETURN)
 
-    results = WebDriverWait(driver, 20).until(
+    results = WebDriverWait(driver, 30).until(
         EC.presence_of_all_elements_located((By.CLASS_NAME, "SearchResultItem"))
     )
 
     scraped_data = []
 
-    for result in results[:8]:
+    for result in results[:3]:
         scraped_data.append(result.text)
 
     driver.quit()
