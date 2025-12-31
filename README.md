@@ -21,7 +21,7 @@ pip install uv
 2. **Clone the repository**:
 
 ```powershell
-uv init
+git clone "https://github.com/Jessica-ovabor/AI_WEBSITE_SUMMARISER.git"
 ```
 
 3. **Install dependencies**:
