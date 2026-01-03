@@ -15,14 +15,14 @@ if not api_key:
     exit(1)
 
 
-def llm_helper(prompt):
+def llm_helper(url):
     client = OpenAI(
         base_url=base_url,
         api_key=api_key,
     )
     system_prompt = "You are an skillful AI assitant who is skilled in summarising any content. You provide short and concise summarisation while keeping all the main point intact. The content you provide is meaningful and well structured"
 
-    user_prompt = web_scraper(prompt)
+    user_prompt = web_scraper(url)
     try:
         response = client.chat.completions.create(
             model="openai/gpt-3.5-turbo",
