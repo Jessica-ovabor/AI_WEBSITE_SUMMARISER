@@ -12,14 +12,12 @@ def web_scraper(url):
     search = driver.find_element(By.ID, "InlineSearch")
     search.send_keys("Australia", Keys.RETURN)
 
-    results = WebDriverWait(driver, 30).until(
+    results = WebDriverWait(driver, 40).until(
         EC.presence_of_all_elements_located((By.CLASS_NAME, "SearchResultItem"))
     )
 
-    
-
     for result in results[:3]:
-        scraped_data =result
+        scraped_data = result
 
     driver.quit()
     return scraped_data
@@ -28,8 +26,7 @@ def web_scraper(url):
 def dynamic_web_scraper(url):
     driver = webdriver.Chrome()
     driver.get(url)
- 
-    
+
     # results = WebDriverWait(driver, 30).until(
     #     EC.presence_of_all_elements_located((By.CLASS_NAME, ""))
     # )
@@ -41,5 +38,3 @@ def dynamic_web_scraper(url):
 
     driver.quit()
     return scraped_data
-
-    
