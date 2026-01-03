@@ -12,3 +12,4 @@ if st.button("Summarize :sparkles:"):
 st.write(
     ":warning:  All website entered here are being scrapped by selenium before the AI model summarises it."
 )
+

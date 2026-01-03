@@ -5,11 +5,6 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 
-def driver_client():
-    driver = webdriver.Chrome()
-    return driver
-
-
 def web_scraper(url):
     driver = webdriver.Chrome()
     driver.get(url)
@@ -21,28 +16,30 @@ def web_scraper(url):
         EC.presence_of_all_elements_located((By.CLASS_NAME, "SearchResultItem"))
     )
 
-    scraped_data = []
+    
 
     for result in results[:3]:
-        scraped_data.append(result.text)
+        scraped_data =result
 
     driver.quit()
     return scraped_data
 
 
 def dynamic_web_scraper(url):
-    web_driver = driver_client()
-    webdriver.get(url)
-    search = web_driver.find_element(By.CSS_SELECTOR, "InlineSearch")
+    driver = webdriver.Chrome()
+    driver.get(url)
+ 
+    
+    # results = WebDriverWait(driver, 30).until(
+    #     EC.presence_of_all_elements_located((By.CLASS_NAME, ""))
+    # )
 
-    results = WebDriverWait(web_driver, 30).until(
-        EC.presence_of_all_elements_located((By.CLASS_NAME, "SearchResultItem"))
-    )
+    scraped_data = driver.page_source[:500]
 
-    scraped_data = []
+    # for result in results[:3]:
+    #     scraped_data.append(result.text)
 
-    for result in results[:3]:
-        scraped_data.append(result.text)
-
-    web_driver.quit()
+    driver.quit()
     return scraped_data
+
+    
