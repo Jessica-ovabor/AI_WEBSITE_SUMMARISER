@@ -12,7 +12,7 @@ def web_scraper(url):
     search = driver.find_element(By.ID, "InlineSearch")
     search.send_keys("Australia", Keys.RETURN)
 
-    results = WebDriverWait(driver, 40).until(
+    results = WebDriverWait(driver, 90).until(
         EC.presence_of_all_elements_located((By.CLASS_NAME, "SearchResultItem"))
     )
 

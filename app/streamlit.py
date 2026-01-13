@@ -4,7 +4,7 @@ from main import llm_helper
 st.header("AI WebSite summariser :brain:", divider="rainbow")
 
 website_url = st.text_input("Enter your website url to summarise")
-print(llm_helper(website_url))
+
 if st.button("Summarize :sparkles:"):
     st.write(llm_helper(website_url))
 
